@@ -23,7 +23,7 @@ let main () =
     "Create the default set of templates";
 
     let rpc = X.make !uri in
-    lwt session_id = X.Session.login_with_password ~rpc ~uname:"root" ~pwd:"Qx9xbs0v" ~version:"1.0" in
+    lwt session_id = X.Session.login_with_password ~rpc ~uname:"root" ~pwd:"Qx9xbs0v" ~version:"1.0" ~originator:"xe-create-templates" in
     lwt () = Create_templates.create_all_templates rpc session_id in
     X.Session.logout rpc session_id
 
